@@ -28,7 +28,7 @@ par(mfrow = c(2,2))
 plot(x = features$DateTime,
      y = features$Global_active_power,
      type = "l",
-     ylab = "Global Active Power (kilowatts)",
+     ylab = "Global Active Power",
      xlab = "")
 
 #plot voltage over time
