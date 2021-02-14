@@ -25,7 +25,8 @@ png(filename = "Plot2.png", width = 480, height = 480)
 plot(x = features$DateTime,
      y = features$Global_active_power,
      type = "l",
-     ylab = "Global Active Power (kilowatts)")
+     ylab = "Global Active Power (kilowatts)",
+     xlab = "")
 
 #close graphics device session
 dev.off()
