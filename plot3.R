@@ -19,13 +19,19 @@ features <- read.table("./household_power_consumption.txt", sep = ";", header = 
                 Weekday = wday(DateTime, label = TRUE, abbr = TRUE))
 
 #launch png graphics device session
-png(filename = "Plot2.png", width = 480, height = 480)
+png(filename = "Plot3.png", width = 480, height = 480)
 
 #create line plot
 plot(x = features$DateTime,
-     y = features$Global_active_power,
+     y = features$Sub_metering_1,
      type = "l",
-     ylab = "Global Active Power (kilowatts)")
+     col = "black",
+     ylab = "Energy sub-metering",
+     xlab = "")
 
+lines(x = features$DateTime, y = features$Sub_metering_2, type = "l", col = "red")
+lines(x = features$DateTime, y = features$Sub_metering_3, type = "l", col = "blue")
+
+legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), col = c("black", "red", "blue"), lty = 1)
 #close graphics device session
 dev.off()
